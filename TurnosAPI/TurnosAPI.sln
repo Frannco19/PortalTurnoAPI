@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnosAPI", "TurnosAPI\TurnosAPI.csproj", "{99B366A5-EFB4-45D0-BB9B-1907D14B5B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{AA380DFB-5231-4BFF-868D-6C407584C1CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure", "Infraestructure\Infraestructure.csproj", "{0DC7858A-ED29-429C-8B14-080E656E57FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{4D4C1949-BB37-4ABE-96E9-1A635EA84F94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{99B366A5-EFB4-45D0-BB9B-1907D14B5B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99B366A5-EFB4-45D0-BB9B-1907D14B5B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99B366A5-EFB4-45D0-BB9B-1907D14B5B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA380DFB-5231-4BFF-868D-6C407584C1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA380DFB-5231-4BFF-868D-6C407584C1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA380DFB-5231-4BFF-868D-6C407584C1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA380DFB-5231-4BFF-868D-6C407584C1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC7858A-ED29-429C-8B14-080E656E57FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC7858A-ED29-429C-8B14-080E656E57FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC7858A-ED29-429C-8B14-080E656E57FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC7858A-ED29-429C-8B14-080E656E57FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4C1949-BB37-4ABE-96E9-1A635EA84F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4C1949-BB37-4ABE-96E9-1A635EA84F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4C1949-BB37-4ABE-96E9-1A635EA84F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4C1949-BB37-4ABE-96E9-1A635EA84F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
