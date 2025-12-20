@@ -1,0 +1,7 @@
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+bin/
+obj/
