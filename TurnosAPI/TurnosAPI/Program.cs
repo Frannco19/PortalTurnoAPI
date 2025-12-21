@@ -1,4 +1,6 @@
+using Application.Interfaces.Repositories;
 using Infraestructure;
+using Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -10,8 +12,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -25,13 +25,15 @@ builder.Services.AddDbContext<TurnDbContext>(options =>
             errorCodesToAdd: null);
     });
 
-    // Opcional: sólo en dev para debugging
+    // Opcional: sï¿½lo en dev para debugging
     // options.EnableSensitiveDataLogging(builder.Environment.IsDevelopment());
 });
 
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
 
-
+var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
