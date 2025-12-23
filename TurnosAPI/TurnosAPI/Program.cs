@@ -1,4 +1,5 @@
 using Application.Interfaces.Repositories;
+using Application.Services;
 using Infraestructure;
 using Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,8 @@ builder.Services.AddDbContext<TurnDbContext>(options =>
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+
+builder.Services.AddScoped<AppointmentService>();
 
 
 var app = builder.Build();
