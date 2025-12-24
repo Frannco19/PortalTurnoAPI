@@ -3,12 +3,14 @@ using Application.Interfaces.Repositories;
 using Application.Services;
 using Domain.Entities;
 using Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TurnosAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class AppointmentsController : ControllerBase
     {
         private readonly IAppointmentRepository _appointmentRepository;
@@ -67,6 +69,7 @@ namespace TurnosAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Cancel(int id)
         {
             var appointment = await _appointmentRepository.GetByIdAsync(id);
@@ -82,6 +85,7 @@ namespace TurnosAPI.Controllers
 
 
         [HttpPut("{id:int}/complete")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Complete(int id)
         {
             var appointment = await _appointmentRepository.GetByIdAsync(id);
