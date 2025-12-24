@@ -33,6 +33,10 @@ builder.Services.AddDbContext<TurnDbContext>(options =>
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
+// Services
+builder.Services.AddScoped<ProfessionalService>();
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<AppointmentService>();
 
 
