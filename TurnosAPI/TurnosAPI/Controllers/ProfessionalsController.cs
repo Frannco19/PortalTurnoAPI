@@ -1,11 +1,13 @@
 ﻿using Application.Services;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TurnosAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProfessionalsController : ControllerBase
     {
         private readonly ProfessionalService _service;
@@ -28,6 +30,7 @@ namespace TurnosAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Create([FromBody] Professional professional)
         {
             try
@@ -42,6 +45,7 @@ namespace TurnosAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Update(int id, [FromBody] Professional professional)
         {
             try
@@ -59,6 +63,7 @@ namespace TurnosAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var ok = await _service.DeleteAsync(id);
